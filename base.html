@@ -5,8 +5,12 @@
 </head>
 <body>
     {%for product in Products | groupby("producer") %}
-         {{product.grouper}}
-         {{product.list}}
+        <h1>{{product.grouper}}</h1>
+        {% for item in product.list %}
+            {{item.product_id}}
+            {{item.prod_name}}
+            {{item.type}}
+        {%endfor%}
     {%endfor%}    
 </body>
 </html>
