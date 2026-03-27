@@ -6,11 +6,21 @@
 <body>
     {%for product in Products | groupby("producer") %}
         <h1>{{product.grouper}}</h1>
+        <table>
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Type</th>
+          </tr>
         {% for item in product.list %}
-            {{item.product_id}}
-            {{item.prod_name}}
-            {{item.type}}
+          <tr>
+            <td>{{item.product_id}}</td>
+            <td>{{item.prod_name}}</td>
+            <td>{{item.type}}</td>
+          </tr>
         {%endfor%}
+        </table>
+        <h2>The number of products in {{product.grouper}} is {{product.list|length}}</h2>
     {%endfor%}    
 </body>
 </html>
