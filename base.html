@@ -6,7 +6,7 @@
 <body>
     {%for product in Products | groupby("producer") %}
         <h1>{{product.grouper}}</h1>
-        <table>
+        <table border = "1">
           <tr>
             <th>Product ID</th>
             <th>Product Name</th>

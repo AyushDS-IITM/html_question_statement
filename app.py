@@ -25,4 +25,8 @@ made_temp = Template(temp)
 
 #step 3
 output = made_temp.render(Products=Products)
-print(output)
+#print(output)
+
+file = open("output.html","w")
+file.write(output)
+file.close()
